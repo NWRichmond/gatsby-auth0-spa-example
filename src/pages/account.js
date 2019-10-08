@@ -47,7 +47,16 @@ const Account = () => {
         <h1>Account</h1>
         <Navigation />
         <Profile>
-          <Button type="button" onClick={() => logout()}>
+          <Button
+            type="button"
+            onClick={() =>
+              logout({
+                returnTo:
+                  process.env.AUTH0_LOGOUT_URL ||
+                  process.env.GATSBY_AUTH0_LOGOUT_URL,
+              })
+            }
+          >
             Logout
           </Button>
           <Router>
