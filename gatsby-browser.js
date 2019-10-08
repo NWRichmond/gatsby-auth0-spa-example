@@ -18,11 +18,17 @@ const onRedirectCallback = appState => {
   );
 };
 
+const Auth0Domain = process.env.AUTH0_DOMAIN || process.env.GATSBY_AUTH0_DOMAIN;
+const Auth0ClientID =
+  process.env.AUTH0_CLIENT_ID || process.env.GATSBY_AUTH0_CLIENT_ID;
+const Auth0RedirectURI =
+  process.env.AUTH0_CALLBACK_URL || process.env.GATSBY_AUTH0_CALLBACK_URL;
+
 export const wrapRootElement = ({ element }) => (
   <Auth0Provider
-    domain={process.env.AUTH0_DOMAIN}
-    client_id={process.env.AUTH0_CLIENT_ID}
-    redirect_uri={process.env.AUTH0_CALLBACK_URL}
+    domain={Auth0Domain}
+    client_id={Auth0ClientID}
+    redirect_uri={Auth0RedirectURI}
     onRedirectCallback={onRedirectCallback}
   >
     {element}
