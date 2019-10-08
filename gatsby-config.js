@@ -1,8 +1,18 @@
+const activeEnv =
+  process.env.GATSBY_ACTIVE_ENV ||
+  process.env.NODE_ENV ||
+  'development' ||
+  'production';
+
+require('dotenv').config({
+  path: `.env.${activeEnv}`,
+});
+
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Using auth0-spa-js with Gatsby`,
+    description: `A minimum working example of a Gatsby app which uses the auth0-spa-js package for protected routes.`,
+    author: `@nwrichmond`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -27,8 +37,9 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
+    `gatsby-plugin-styled-components`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
   ],
-}
+};
