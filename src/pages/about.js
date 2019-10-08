@@ -25,7 +25,11 @@ const SecondPage = () => (
     <p>
       If you're a Gatsby user, you might be wondering how the example CRA code
       translates to your Gatsby project. I was too! Hopefully this example site
-      and its repository clears things up.
+      and its{' '}
+      <a href="https://github.com/NWRichmond/gatsby-auth0-spa-example">
+        GitHub repository
+      </a>{' '}
+      clears things up.
     </p>
     <p>
       I'd like to turn this topic into a blog post which explores how to
